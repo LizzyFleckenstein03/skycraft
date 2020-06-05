@@ -51,7 +51,7 @@ minetest.register_chatcommand("shop", {
 		skycraft.join_lobby(name)
 		local player = minetest.get_player_by_name(name)
 		if player then 
-			player:set_pos({x = 50, y = 10000, z = 50})
+			player:set_pos({x = 25, y = 10000, z = 25})
 		end
 	end
 })
