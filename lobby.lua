@@ -56,7 +56,7 @@ minetest.register_chatcommand("shop", {
 	end
 })
 minetest.register_on_joinplayer(function(player)
-	minetest.after(0, skycraft.join_lobby, player:get_player_name())
+	minetest.after(0.5, skycraft.join_lobby, player:get_player_name())
 end)
 
 minetest.register_on_punchplayer(function(player, hitter, time_from_last_punch, tool_capabilities, dir, damage)

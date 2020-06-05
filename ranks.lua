@@ -66,6 +66,7 @@ minetest.register_on_leaveplayer(function(player)
 end)
 
 minetest.register_on_chat_message(function(name, message)
+	if not minetest.get_player_by_name(name) then return end
     minetest.chat_send_all(skycraft.get_player_name(name, {"<", ">"}) .. " " .. message)
     return true
 end)
