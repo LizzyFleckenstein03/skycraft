@@ -1,4 +1,3 @@
-
 skycraft.ranks = {
 	player = {
         privs = {"interact", "shout", "skycraft"},
@@ -16,35 +15,47 @@ skycraft.ranks = {
 	creative = {
 		privs = {"creative", "fly", "fast"},
 		color = "#FF9C00",
-		tag = "[CREATIVE]",
+		tag = "[Creative]",
 	},
 	mod = {
 		privs = {"kick", "ban", "noclip", "settime", "give", "teleport", "bring", "protection_bypass", "worldedit"},
 		color = "#006BFF",
-		tag = "[MOD]",
+		tag = "[Mod]",
 	},
 	dev = {
 		privs = {"server", "privs"},
 		color = "#9D00FF",
-		tag = "[DEV]",
+		tag = "[Dev]",
 	},
 	admin = {
 		color = "#FF001C",
-		tag = "[ADMIN]",
+		tag = "[Admin]",
 	},
 	owner = {
 		color = "#D90059",
-		tag = "[OWNER]",
+		tag = "[Owner]",
 	},
 }
 
+skycraft.offline_ranks = {
+	offline = {
+		color = "#969696",
+		tag = "[Offline]",
+	},
+	console = {
+		color = "#000000",
+		tag = "[Console]",
+	},
+}
 
 function skycraft.get_rank(name)
 	local player = minetest.get_player_by_name(name)
-	if not player then return end
+	if not player then
+		return skycraft.offline_ranks[(minetest.settings:get("name") == name) and "console" or "offline"]
+	end
 	local rank = player:get_meta():get_string("rank")
-	if rank == "" then rank = "player" end
-    return skycraft.ranks[rank]
+	rank = (rank == "") and "player" or rank
+	return skycraft.ranks[rank]
 end
 
 function skycraft.get_player_name(name, brackets)
@@ -66,7 +77,6 @@ minetest.register_on_leaveplayer(function(player)
 end)
 
 minetest.register_on_chat_message(function(name, message)
-	if not minetest.get_player_by_name(name) then return end
     minetest.chat_send_all(skycraft.get_player_name(name, {"<", ">"}) .. " " .. message)
     return true
 end)
