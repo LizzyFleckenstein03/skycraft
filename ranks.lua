@@ -13,12 +13,12 @@ skycraft.ranks = {
 		tag = "[MVP]",
 	},
 	creative = {
-		privs = {"creative", "fly", "fast"},
+		privs = {"give", "fly", "fast"},
 		color = "#FF9C00",
 		tag = "[Creative]",
 	},
 	mod = {
-		privs = {"kick", "ban", "noclip", "settime", "give", "teleport", "bring", "protection_bypass", "worldedit"},
+		privs = {"kick", "ban", "noclip", "settime", "teleport", "bring", "protection_bypass", "worldedit"},
 		color = "#006BFF",
 		tag = "[Mod]",
 	},
