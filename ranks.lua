@@ -87,7 +87,7 @@ minetest.register_chatcommand("rank", {
 	privs = {privs = true},
 	func = function(name, param)
 		local target = param:split(" ")[1] or ""
-		local target_ref = minetest.get_player_by_name(name)
+		local target_ref = minetest.get_player_by_name(target)
 		local rank = param:split(" ")[2] or ""
 		local rank_ref = skycraft.ranks[rank]
 		if not rank_ref then 
