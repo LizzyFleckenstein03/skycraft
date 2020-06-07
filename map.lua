@@ -1,7 +1,7 @@
 skycraft.ores = skycraft.random:new()
 skycraft.ores:add_choice("mcl_core:cobble", 1000)
 skycraft.ores:add_choice("mcl_core:stone", 200)
-skycraft.ores:add_choice("mcl_core:stone_with_coal", 50)
+skycraft.ores:add_choice("mcl_core:stone_with_coal", 31)
 skycraft.ores:add_choice("mcl_core:stone_with_iron", 25)
 skycraft.ores:add_choice("mcl_core:stone_with_gold", 10)
 skycraft.ores:add_choice("mcl_core:stone_with_lapis", 10)
