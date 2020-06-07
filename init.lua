@@ -45,7 +45,7 @@ end)
 
 do
 	local modpath = minetest.get_modpath("skycraft")
-	local modules = {"random", "commands", "ranks", "plots", "spawns", "map", "request", "tpa", "trade", "lobby", "money", "lucky_block", "nether_portal"}
+	local modules = {"random", "commands", "ranks", "plots", "spawns", "mapgen", "request", "tpa", "trade", "lobby", "money", "lucky_block", "nether_portal", "lava_cooling", "flower_spread", "shop"}
 	for _, m in pairs(modules) do
 		dofile(modpath .. "/" .. m .. ".lua")
 	end
