@@ -18,12 +18,8 @@ end)
 
 minetest.register_privilege("skycraft", "Use Skycraft commands")
 
-local modules = {
-	common = {"common", "random" , "request"},
-	main = {"commands", "flower_spread", "lobby", "lucky_block", "mapgen", "money", "plots", "ranks", "spawns", "tpa", "trade"},
-	onload = {"lava_cooling", "lobby_load", "nether_portal", "sapling_mutation", "shop", "spawn", "void"}
-}
 local modpath = minetest.get_modpath("skycraft")
+local modules = minetest.deserialize(io.open(modpath .. "/modules.txt", "r"):read())
 local function load_module(m)
 	for _, f in pairs(modules[m]) do
 		dofile(modpath .. "/src/" .. m .. "/" .. f .. ".lua")

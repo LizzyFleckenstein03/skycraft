@@ -1,0 +1,1 @@
+return {common={"common","random","request",},main={"commands","flower_spread","lobby","lucky_block","mapgen","money","plots","ranks","spawns","tpa","trade",},onload={"lava_cooling","lobby_load","monster_egg_stone_block","nether_portal","sapling_mutation","shop","spawn","void",},}
