@@ -18,6 +18,6 @@ for i=1, 8 do
 end
 
 lucky_block:add_blocks({
-	{"dro", {"mcl_core:dirt"}, 64},
+	{"dro", {"mcl_core:dirt", "mcl_core:sand", "mcl_core:gravel"}, 100},
 	{"dro", discs, 1}
 })
