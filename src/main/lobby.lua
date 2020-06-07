@@ -55,6 +55,7 @@ minetest.register_chatcommand("shop", {
 		end
 	end
 })
+
 minetest.register_on_joinplayer(function(player)
 	minetest.after(0.5, skycraft.join_lobby, player:get_player_name())
 end)
@@ -69,11 +70,3 @@ end)
 minetest.register_on_player_hpchange(function(player, hp_change)
 	return (player:get_pos().y > 5000) and 0 or hp_change
 end, true)
-
-minetest.register_on_mods_loaded(function()
-	function mcl_spawn.get_world_spawn_pos()
-		return skycraft.lobby_pos
-	end
-end)
-
-minetest.after(0.5, skycraft.lobby_tick)

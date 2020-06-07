@@ -31,10 +31,3 @@ minetest.register_on_generated(function(minp, maxp)
 	vm:update_liquids()
 	vm:write_to_map()
 end)
-
-minetest.register_on_mods_loaded(function()
-	function mcl_worlds.is_in_void(pos)
-		local res = minetest.get_node(vector.floor(pos)).name == "mcl_core:void"
-		return res, res
-	end
-end)
