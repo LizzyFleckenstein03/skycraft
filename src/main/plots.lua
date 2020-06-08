@@ -130,7 +130,7 @@ local plot_commands = {
 		if pos.y < -100 then return false, "You can only use this command in the Overworld" end
 		local plot = skycraft.get_plot_at_pos(pos)
 		if plot and plot.owner == name then return false, "You are already on your home plot" end
-		skycraft.spawn_player(name)
+		skycraft.spawn_player(player)
 		return true, "Warped to your home plot"
 	end
 }
