@@ -71,9 +71,9 @@ function skycraft.update_nametag(player)
 	player:set_nametag_attributes({color = skycraft.get_rank(player:get_player_name()).color})
 end
 
-function minetest.register_on_joinplayer(player)
+minetest.register_on_joinplayer(function(player)
 	skycraft.update_nametag(player)
-end
+end)
 
 minetest.register_on_leaveplayer(function(player)
     minetest.chat_send_all(skycraft.get_player_name(player:get_player_name()) .. " left the Server")
