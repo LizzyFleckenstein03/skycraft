@@ -1,5 +1,7 @@
 skycraft = {}
 
+skycraft.modpath = minetest.get_modpath("skycraft")
+
 do
 	local file = io.open(minetest.get_worldpath() .. "/skycraft", "r")
 	if file then
@@ -18,11 +20,10 @@ end)
 
 minetest.register_privilege("skycraft", "Use Skycraft commands")
 
-local modpath = minetest.get_modpath("skycraft")
-local modules = minetest.deserialize(io.open(modpath .. "/modules.txt", "r"):read())
+local modules = minetest.deserialize(io.open(skycraft.modpath .. "/modules.txt", "r"):read())
 local function load_module(m)
 	for _, f in pairs(modules[m]) do
-		dofile(modpath .. "/src/" .. m .. "/" .. f .. ".lua")
+		dofile(skycraft.modpath .. "/src/" .. m .. "/" .. f .. ".lua")
 	end
 end
 load_module("common")
