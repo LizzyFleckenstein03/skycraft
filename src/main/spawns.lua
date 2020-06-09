@@ -2,11 +2,7 @@ skycraft.spawn_offset = {x = 3, y = 2, z = 0}
 
 skycraft.starter_mobs = {"mobs_mc:cow", "mobs_mc:sheep", "mobs_mc:pig"}
 
-do
-	local file = io.open(minetest.get_modpath("skycraft") .. "/schems/island.we", "r")
-	skycraft.island_schem = file:read()
-	file:close()
-end
+skycraft.load_schem("island")
 
 skycraft.savedata.spawns = skycraft.savedata.spawns or {} 
 
@@ -31,7 +27,7 @@ function skycraft.spawn_player(player)
 		local physics = player:get_physics_override()
 		player:set_physics_override({gravity = 0})
 		minetest.after(5, function()
-			worldedit.deserialize(vector.add(spawn, {x = -6, y = -6, z = -4}), skycraft.island_schem)
+			skycraft.add_schem(vector.add(spawn, {x = -6, y = -6, z = -4}), "island")
 			local nametag = name .. "'s Friend"
 			local entity = minetest.add_entity(vector.add(spawn, {x = -4.5, y = 1, z = 1.5}), skycraft.starter_mobs[math.random(#skycraft.starter_mobs)])
 			entity:get_luaentity().nametag = nametag
