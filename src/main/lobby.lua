@@ -70,3 +70,5 @@ end)
 minetest.register_on_player_hpchange(function(player, hp_change)
 	return (player:get_pos().y > 5000) and 0 or hp_change
 end, true)
+
+skycraft.lobby_tick()
