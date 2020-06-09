@@ -29,7 +29,7 @@ function skycraft.trade:start(name1, name2)
 	})
 	self.inventory:set_size("1", 12)
 	self.inventory:set_size("2", 12)
-	self:update_formspec()
+	minetest.after(0.5, self.update_formspec, self)
 end
 
 function skycraft.trade:allow_access(list, name)
