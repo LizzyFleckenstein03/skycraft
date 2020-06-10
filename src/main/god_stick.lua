@@ -1,4 +1,4 @@
-local groupcaps = {times = {0, 0, 0}, uses = 0, maxlevel = 3},
+local groupcaps = {times = {0, 0, 0}, uses = 0, maxlevel = 3}
 
 minetest.register_tool("skycraft:god_stick", {
     description = "God Stick",
