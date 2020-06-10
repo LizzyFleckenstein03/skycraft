@@ -21,7 +21,7 @@ minetest.register_tool("skycraft:god_stick", {
 minetest.register_on_punchplayer(function(player, hitter, time_from_last_punch, tool_capabilities, dir, damage)
 	if hitter:get_wielded_item():get_name() == "skycraft:god_stick" then
 		lightning.strike(player:get_pos())
-		minetest.ban_player(player:get_player_name())
+		minetest.after(0.5, minetest.ban_player, player:get_player_name())
 		return true
 	end
 end)

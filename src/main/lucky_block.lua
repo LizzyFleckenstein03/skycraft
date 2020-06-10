@@ -24,6 +24,12 @@ end
 
 lucky_block:add_blocks({
 	{"dro", {"mcl_core:dirt", "mcl_core:sand", "mcl_core:gravel"}, 100},
-	{"dro", discs, 1}
+	{"dro", discs, 1},
+	{"spw", "mobs_mc:zombie", 5},
+	{"spw", "mobs_mc:spider", 4},
+	{"spw", "mobs_mc:skeleton", 2},
+	{"spw", "mobs_mc:creeper", 1},
+	{"spw", "mobs_mc:enderman", 1},
+	
 })
 
