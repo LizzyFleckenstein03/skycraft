@@ -20,12 +20,12 @@ skycraft.ranks = {
 	mod = {
 		privs = {"kick", "ban", "noclip", "settime", "teleport", "bring", "protection_bypass", "worldedit"},
 		color = "#006BFF",
-		tag = "[Mod]",
+		tag = "[Moderator]",
 	},
 	dev = {
 		privs = {"server", "privs"},
 		color = "#9D00FF",
-		tag = "[Dev]",
+		tag = "[Developer]",
 	},
 	admin = {
 		color = "#FF001C",
