@@ -6,13 +6,11 @@ for nodename, nodedef in pairs(minetest.registered_nodes) do
 				local text = minetest.get_meta(pos):get_string("text") or ""
 				local lines = text:split("\n")
 				local action, amount, price = lines[1], lines[2], lines[3]
-				print(action, amount, price)
 				if not (action and amount and price) then return end
 				price = string.gsub(price, "%$", "")
 				price = tonumber(price)
 				amount = string.gsub(amount, "x", "")
 				amount = tonumber(amount)
-				print(action, amount, price)
 				if not (amount and price) then return end
 				local func, frameoffset
 				if action == "Buy" then

@@ -1,13 +1,13 @@
 skycraft.ores = skycraft.random:new()
 skycraft.ores:add_choice("mcl_core:cobble", 1000)
-skycraft.ores:add_choice("mcl_core:stone", 200)
-skycraft.ores:add_choice("mcl_core:stone_with_coal", 31)
+skycraft.ores:add_choice("mcl_core:stone_with_coal", 30)
 skycraft.ores:add_choice("mcl_core:stone_with_iron", 25)
 skycraft.ores:add_choice("mcl_core:stone_with_gold", 10)
 skycraft.ores:add_choice("mcl_core:stone_with_lapis", 10)
 skycraft.ores:add_choice("mcl_core:stone_with_redstone", 10)
 skycraft.ores:add_choice("mcl_core:stone_with_diamond", 5)
-skycraft.ores:calc_csum() 
+skycraft.ores:add_choice("mcl_core:stone_with_emerald", 1)
+skycraft.ores:calc_csum()
 
 for k, v in pairs(minetest.registered_abms) do
 	if v.label == "Lava cooling" then
