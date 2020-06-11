@@ -29,7 +29,7 @@ lucky_block:add_blocks({
 	{"spw", "mobs_mc:creeper", 1},
 	{"spw", "mobs_mc:enderman", 1},
 	{"spw", "mobs_mc:mooshroom", 1},
-	{"spw", "mobs_mc:slime", 1},
+	{"spw", "mobs_mc:slime_big", 1},
 	{"spw", "mobs_mc:bat", 10},
 	{"nod", "mcl_cake:cake"},
 	{"nod", "mcl_farming:pumpkin"},
