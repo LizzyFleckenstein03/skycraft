@@ -25,7 +25,7 @@ end
 
 minetest.register_chatcommand("armorstand", {
 	description = "Spawn an armor stand at your position and fill it with random armor",
-	privs = {server = true}
+	privs = {server = true},
 	func = function(name)
 		local player = minetest.get_player_by_name(name)
 		if not player then return false, "You have to be online to use this command" end
