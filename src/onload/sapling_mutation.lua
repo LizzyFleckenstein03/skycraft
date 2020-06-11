@@ -5,7 +5,7 @@ for _, tree in pairs(trees) do
 	for _, mutant_tree in pairs(trees) do
 		drop.items[#drop.items + 1] = {
 			items = {"mcl_core:" .. mutant_tree .. "sapling"},
-			rarity = 1000,
+			rarity = 5000,
 		}
 	end
 end
