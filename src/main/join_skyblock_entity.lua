@@ -9,7 +9,7 @@ local function on_punch_or_rightclick(self, player)
 end
 
 local function on_activate(self)
-	self.object:set_pos({x = 17, y = 10000.5, z = 0,})
+	self.object:set_pos({x = -10, y = 10000, z = 0,})
 	self.object:set_yaw(math.pi * 1.5)
 	self.object:set_nametag_attributes({color = "#00B59A", text = "Join Skyblock"})
 	self.object:set_animation({x = 0, y = 79}, 30, 0)
