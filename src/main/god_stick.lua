@@ -13,8 +13,9 @@ minetest.register_tool("skycraft:god_stick", {
             axey = groupcaps,
             shovely = groupcaps,
             fleshy = groupcaps,
+            handy = groupcaps,
         },
-        damage_groups = {fleshy = 1000},
+        damage_groups = {fleshy = 65535},
     }
 })
 
