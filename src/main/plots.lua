@@ -58,6 +58,7 @@ local plot_commands = {
 	gui = function(name, message)
 		message = message or ""
 		local plot = skycraft.get_plot_by_player(name)
+		if not plot then return false, "You don't have a plot yet" end
 		local esc = minetest.formspec_escape
 		local formspec = "size[8,10]"
 			.. "label[2.5,0;" .. esc("-- Plot interface --") .. "]"
@@ -172,7 +173,7 @@ end)
 local old_is_protected = minetest.is_protected
 function minetest.is_protected(pos, name)
 	local plot = skycraft.get_plot_at_pos(pos) or {members = {}}
-	if pos.y > 5000 or (pos.y < 1000 and pos.y > -100) or plot.owner ~= name and table.indexof(plot.members, name) == -1 then
+	if pos.y > 5000 or (pos.y < 1000 and pos.y > -100) or (plot.owner ~= name and table.indexof(plot.members, name) == -1) then
 		return not minetest.check_player_privs(name, {protection_bypass = true})
 	else
 		return old_is_protected(pos, name)
