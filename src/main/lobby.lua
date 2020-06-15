@@ -23,18 +23,6 @@ function skycraft.join_skyblock(name)
 	end
 end
 
-function skycraft.lobby_tick()
-	local players = minetest.get_connected_players()
-	for _, player in pairs(players) do
-		local name = player:get_player_name()
-		local privs = minetest.get_player_privs(name)
-		local pos = player:get_pos()
-		privs.skycraft = (pos.y < 5000 or privs.protection_bypass) and true or nil
-		minetest.set_player_privs(name, privs)
-    end
-    minetest.after(0.5, skycraft.lobby_tick)
-end
-
 minetest.register_chatcommand("lobby", {
 	description = "Warp to the Lobby",
 	func = skycraft.join_lobby
@@ -71,4 +59,13 @@ minetest.register_on_player_hpchange(function(player, hp_change)
 	return (player:get_pos().y > 5000) and 0 or hp_change
 end, true)
 
-skycraft.lobby_tick()
+minetest.register_globalstep(function()
+	local players = minetest.get_connected_players()
+	for _, player in pairs(players) do
+		local name = player:get_player_name()
+		local privs = minetest.get_player_privs(name)
+		local pos = player:get_pos()
+		privs.skycraft = (pos.y < 5000 or privs.protection_bypass) and true or nil
+		minetest.set_player_privs(name, privs)
+    end
+end)

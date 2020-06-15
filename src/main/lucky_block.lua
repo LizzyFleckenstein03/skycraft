@@ -7,7 +7,7 @@ minetest.override_item("lucky_block:lucky_block", {
 	inventory_image = minetest.inventorycube("skycraft_lucky_block.png"),
 	light_source = nil,
 	on_dig = function(pos, node, digger)
-		if not minetest.is_protected(pos, digger) then old_on_dig(pos, node, digger) end
+		if not minetest.is_protected(pos, digger:get_player_name()) then old_on_dig(pos, node, digger) end
 	end
 })
 
