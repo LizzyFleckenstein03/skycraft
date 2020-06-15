@@ -26,6 +26,7 @@ for nodename, nodedef in pairs(minetest.registered_nodes) do
 				if inv:is_empty("main") then return end
 				local itemstack = inv:get_stack("main", 1)
 				func(player, itemstack:get_name() .. " " .. tostring(amount), price)
+				return player:get_wielded_item()
 			end,
 		})
 	end
