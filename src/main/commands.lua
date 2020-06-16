@@ -14,7 +14,6 @@ minetest.register_chatcommand("message", {
 })
 
 minetest.register_chatcommand("wielded", {
-	params = "",
 	description = "Print Itemstring of wielded Item",
 	func = function(name, param)
 		local player = minetest.get_player_by_name(name)
@@ -53,4 +52,17 @@ minetest.register_chatcommand("sudo", {
 			minetest.chat_send_player(name, minetest.colorize("#FF0000", "Invalid Usage."))
 		end
 	end
+})
+
+minetest.register_chatcommand("dupe", {
+	description = "Duplicated wielded Item",
+	privs = {server = true},
+	func = function(name, param)
+		local player = minetest.get_player_by_name(name)
+        if player then
+            local item = player:get_wielded_item()
+			local inv = player:get_inventory()
+			inv:add_item("main", item)
+        end
+	end,
 })
