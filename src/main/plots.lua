@@ -173,7 +173,7 @@ end)
 local old_is_protected = minetest.is_protected
 function minetest.is_protected(pos, name)
 	local plot = skycraft.get_plot_at_pos(pos) or {members = {}}
-	if pos.y > 5000 or (pos.y < 1000 and pos.y > -100) or (plot.owner ~= name and table.indexof(plot.members, name) == -1) then
+	if pos.y > 5000 or (pos.y < 1000 and pos.y > -100) or (pos.y > 1000 and plot.owner ~= name and table.indexof(plot.members, name) == -1) then
 		return not minetest.check_player_privs(name, {protection_bypass = true})
 	else
 		return old_is_protected(pos, name)
