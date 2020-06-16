@@ -50,7 +50,7 @@ end)
 
 minetest.register_on_punchplayer(function(player, hitter, time_from_last_punch, tool_capabilities, dir, damage)
 	if player:get_pos().y > 5000 then
-		minetest.chat_send_player(hitter:get_player_name(), minetest.colorize("#FF6737", "You can not do PvP here!"))
+		minetest.chat_send_player(hitter:get_player_name(), minetest.colorize("#FF6737", "Hey! Sorry, you can't PvP here!"))
 		return true
 	end
 end)

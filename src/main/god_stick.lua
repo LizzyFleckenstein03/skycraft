@@ -15,14 +15,14 @@ minetest.register_tool("skycraft:god_stick", {
             fleshy = groupcaps,
             handy = groupcaps,
         },
-        damage_groups = {fleshy = 65535},
+        damage_groups = {fleshy = 1000},
     }
 })
 
 minetest.register_on_punchplayer(function(player, hitter, time_from_last_punch, tool_capabilities, dir, damage)
 	if hitter:get_wielded_item():get_name() == "skycraft:god_stick" then
 		lightning.strike(player:get_pos())
-		minetest.after(0.5, minetest.ban_player, player:get_player_name())
+		minetest.after(0.25, minetest.ban_player, player:get_player_name())
 		return true
 	end
 end)
