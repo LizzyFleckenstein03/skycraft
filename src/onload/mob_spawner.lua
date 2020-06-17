@@ -9,6 +9,7 @@ function spawner_def.on_place(itemstack, placer, pointed_thing)
 	old_on_place(itemstack, placer, pointed_thing)
 	privs.maphack = nil
 	minetest.set_player_privs(name, privs)
+	return player:get_wielded_item()
 end
 
 spawner_def.drop = "mcl_mobspawners:spawner"
